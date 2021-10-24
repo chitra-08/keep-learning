@@ -1,0 +1,31 @@
+"""
+Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+You may assume that each input would have exactly one solution, and you may not use the same element twice.
+
+Example 1:
+Input: nums = [2,7,11,15], target = 9
+Output: [0,1]
+Output: Because nums[0] + nums[1] == 9, we return [0, 1].
+"""
+
+
+class Solution:
+    def twoSum(self, numList, targetSum):
+        listans = []
+        for i in range(0,len(numList)-1 ):
+            for j in range(i+1, len(numList)):
+                if numList[i] + numList[j] == targetSum:
+                    listans.append(i)
+                    listans.append(j)
+                    return listans
+
+
+S1 = Solution()
+numList = []
+targetSum = 10
+numrange = int(input(f"how many nos u want in list to meet target sum of {targetSum}\n"))
+print(f"Enter the list of {numrange} nos\n")
+for i in range(numrange):
+    numList.append(int(input()))
+a = S1.twoSum(numList, targetSum)
+print(a)
